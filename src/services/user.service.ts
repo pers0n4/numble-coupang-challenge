@@ -14,7 +14,7 @@ class UserService {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
-      }
+      },
     );
 
     return data;
@@ -22,7 +22,7 @@ class UserService {
 
   async read(id: number) {
     const { data } = await axios.get(
-      process.env.NEXT_PUBLIC_API_HOST + "/users/" + id
+      process.env.NEXT_PUBLIC_API_HOST + "/users/" + id,
     );
 
     return data;

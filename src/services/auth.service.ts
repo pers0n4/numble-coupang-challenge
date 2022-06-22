@@ -27,7 +27,7 @@ class AuthService {
         headers: {
           Authorization: `Bearer ${refreshToken}`,
         },
-      }
+      },
     );
 
     cookies.set("accessToken", data.access, { expires: 1 });
@@ -40,11 +40,11 @@ class AuthService {
     password: string,
     name: string,
     phoneNumber: string,
-    agreements: SignupAgreements
+    agreements: SignupAgreements,
   ) {
     const { data } = await axios.post(
       process.env.NEXT_PUBLIC_API_HOST + "/auth/signup",
-      { email, password, name, phoneNumber, agreements }
+      { email, password, name, phoneNumber, agreements },
     );
 
     cookies.set("accessToken", data.access, { expires: 1 });
@@ -55,7 +55,7 @@ class AuthService {
   async login(email: string, password: string) {
     const { data } = await axios.post(
       process.env.NEXT_PUBLIC_API_HOST + "/auth/login",
-      { email, password }
+      { email, password },
     );
 
     cookies.set("accessToken", data.access, { expires: 1 });
