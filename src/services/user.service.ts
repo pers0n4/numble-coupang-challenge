@@ -1,29 +1,22 @@
-import axios from "axios";
-import cookies from "js-cookie";
+import BaseService from "./base.service";
 
-class UserService {
+class UserService extends BaseService {
   async me() {
-    const accessToken = cookies.get("accessToken");
-    if (!accessToken) {
+    if (!this.accessToken) {
       return;
     }
 
-    const { data } = await axios.get(
-      process.env.NEXT_PUBLIC_API_HOST + "/users/me",
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
+    const { data } = await this.request.get("/users/me", {
+      headers: {
+        Authorization: `Bearer ${this.accessToken}`,
       },
-    );
+    });
 
     return data;
   }
 
   async read(id: number) {
-    const { data } = await axios.get(
-      process.env.NEXT_PUBLIC_API_HOST + "/users/" + id,
-    );
+    const { data } = await this.request.get(`/users/${id}`);
 
     return data;
   }
