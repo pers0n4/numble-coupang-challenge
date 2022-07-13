@@ -28,6 +28,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   display: block;
   width: 100%;
   border: 0;
+  margin-top: 16px;
   padding: 16px 17px;
   font-size: 17px;
   font-weight: 700;
