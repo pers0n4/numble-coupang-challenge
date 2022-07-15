@@ -1,7 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 
-import StyledButton from "./StyledButton";
+import StyledButton from "./Button.style";
 
 interface ButtonProps
   extends React.PropsWithChildren,

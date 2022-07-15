@@ -1,7 +1,7 @@
 import * as React from "react";
 import { FieldError } from "react-hook-form";
 
-import { StyledInput, StyledError, StyledLabel } from "./StyledInput";
+import { StyledInput, StyledError, StyledLabel } from "./Input.style";
 
 interface InputProps
   extends React.DetailedHTMLProps<
